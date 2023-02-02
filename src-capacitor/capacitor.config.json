@@ -1,0 +1,7 @@
+{
+  "appId": "org.capacitor.reservasApt.app",
+  "appName": "reservTAK",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
