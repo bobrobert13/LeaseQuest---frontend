@@ -8,6 +8,12 @@ const routes = [
     ]
   },
   {
+    path: '/login',
+    children: [
+      { path: '', component: () => import('pages/login.vue') }
+    ]
+  },
+  {
     path: '/home',
     children: [
       { path: '', component: () => import('pages/home.vue') }

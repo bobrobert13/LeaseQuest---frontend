@@ -23,8 +23,9 @@ export default {
 <style>
 .q-field__control {
   height: 40px;
-  background-color: #cbcad017;
-  border: 1px solid #80CBB5;
+  background-color: #f9f9f9fe;
+  border: none;
+  outline: none;
 
 }
 

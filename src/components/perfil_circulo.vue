@@ -1,8 +1,10 @@
 <template>
   <div>
-    <q-avatar class="  " size="50px" font-size="52px">
-      <img src="../assets/avatar.jpg">
-    </q-avatar>
+    <router-link to="/profile">
+      <q-avatar class="  " size="50px" font-size="52px">
+        <img src="../assets/avatar.jpg">
+      </q-avatar>
+    </router-link>
   </div>
 </template>
 

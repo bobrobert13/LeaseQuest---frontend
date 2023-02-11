@@ -1,6 +1,6 @@
 
 <template>
-  <div class=" ">
+  <div class=" mt-16 ">
 
     <div class=" q-pa-md col-12 column " id="metrica">
       <div class="row  relative-position items-center q-pa-sm col-12">

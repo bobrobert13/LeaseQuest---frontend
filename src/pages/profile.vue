@@ -4,14 +4,14 @@
       <q-img src="../assets/portada.jpg" style="height: 190px;" :ratio="16 / 9" spinner-color="primary"
         spinner-size="82px" />
     </div>
-    <div id="avatar" class=" fixed absolute-center ">
+    <div id="avatar" class=" absolute-center ">
       <q-avatar size="100px" font-size="52px">
         <q-img src="../assets/billie.jpg" style="height: 100px;" :ratio="16 / 9" spinner-color="primary" />
       </q-avatar>
-      <p class=" q-pa-sm text-weight-light text-center">Billie Eilish</p>
+      <p class=" q-pa-sm text-weight-light font-light text-center">Billie Eilish</p>
     </div>
 
-    <section id="menu" class=" col-12 q-pa-lg bg-primary q-mt-xl" rounded>
+    <section id="menu" class=" col-12 q-pa-lg bg-primary" rounded>
       <q-card-section>
         <p class=" text-h6 text-white text-weight-bold">Cuenta</p>
       </q-card-section>
@@ -26,7 +26,7 @@
 
             </q-item-section>
             <q-item-section>
-              <span class=" text-subtitle1 text-white text-weight-bold">Informacion </span>
+              <span class=" text-h6 text-white text-weight-bold">Informacion </span>
             </q-item-section>
           </q-item>
         </q-list>
