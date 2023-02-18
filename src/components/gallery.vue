@@ -12,18 +12,6 @@
       </div>
 
     </div>
-    <span class=" text-center cursor-pointer block q-mt-md">
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 40 38">
-        <g id="BottomIMG" transform="translate(0 0.143)">
-          <ellipse id="Elipse_1" data-name="Elipse 1" cx="20" cy="19" rx="20" ry="19" transform="translate(0 -0.143)"
-            fill="#09B482" />
-          <path id="Polígono_1" data-name="Polígono 1" d="M10,0,20,18H0Z" transform="translate(30 29.857) rotate(180)"
-            fill="#fafafa" />
-        </g>
-      </svg>
-
-    </span>
-
   </div>
 </template>
 

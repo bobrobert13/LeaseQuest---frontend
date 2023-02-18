@@ -2,8 +2,7 @@
 
 
   <div class="q-mt-md ">
-    <q-scroll-area class=" " style=" max-width: 100vw ; width: 100vw; height: 280px">
-    <q-card v-for="(index) in 1" class=" my-card mr-20 rounded-bl-xl rounded-br-xl "
+    <q-card v-for="(index) in 1" class="relative z-10  my-card mr-20 rounded-bl-xl rounded-br-xl "
       style=" width: 80%; border-top-right-radius: 15px; border-top-left-radius: 15px">
       <img src="../assets/1.jpg " class=" h-40 object-cover  bg-cover w-max block "
         style=" border-top-right-radius: 15px; border-top-left-radius: 15px;"/>
@@ -15,8 +14,9 @@
         <span class=" text-weight-light m-0 p-0 font-sans text-accent font-medium text-xs">4000St AV. Lonely rooms and
           strike.</span>
       </div>
+
     </q-card>
-  </q-scroll-area>
+
   </div>
 
 

@@ -1,8 +1,8 @@
 
 <template>
-  <div class=" mt-16 ">
+  <div class=" mt-7 ">
 
-    <div class=" q-pa-md col-12 column " id="metrica">
+    <div class=" q-pa-sm col-12 column " id="metrica">
       <div class="row  relative-position items-center q-pa-sm col-12">
         <span class=" q-ml-md">
           <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class=" q-pa-md col-12 column " id="metrica">
+    <div class=" q-pa-sm col-12 column " id="metrica">
       <div class="row  relative-position items-center q-pa-sm col-12">
         <span class=" q-ml-md">
           <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
@@ -39,7 +39,7 @@
     </div>
 
 
-    <div class=" q-pa-md col-12 column " id="metrica">
+    <div class=" q-pa-sm col-12 column " id="metrica">
       <div class="row  relative-position items-center q-pa-sm col-12">
         <span class=" q-ml-md">
           <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">

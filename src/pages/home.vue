@@ -1,5 +1,6 @@
 <template >
   <div class=" z-0 relative">
+
   <div v-if=" loaderHome == true" class=" z-20 w-full h-full absolute-center row justify-center " >
     <q-spinner
     class=" mt-60 animate-pulse text-xl w-24 h-24 "
@@ -9,7 +10,7 @@
   />
   </div>
   <div v-if=" loaderHome !== true">
-  <div  class=" bg-primary pb-5" style="  margin-top: -16px; border-bottom-left-radius: 20%; border-bottom-right-radius: 20%;">
+  <div  class=" bg-primary pb-2" style="  margin-top: -16px; border-bottom-left-radius: 20%; border-bottom-right-radius: 20%;">
     <div id="oferta" class=" w-10 h-10 shadow-sm bg-white rounded-full absolute z-10 animate-pulse " style="top: 10%; right: 15px;"></div>
     <q-card-section class="row items-center justify-around q-mt-md col-12">
 
@@ -18,6 +19,7 @@
     </q-card-section>
   </div>
     <div class="q-pa-lg" :style="styleDiv" @click="outDiv">
+
       <span class=" text-xl sm:text-md text-weight-bolder md:textarea-md lg:text-lg text-primary">Mejor Valorados</span>
       <Valorados />
     </div>

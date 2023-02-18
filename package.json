@@ -30,6 +30,8 @@
     "graphql": "^15.0.0",
     "graphql-tag": "^2.12.6",
     "hooper": "^0.3.4",
+    "mitt": "^3.0.0",
+    "pinia": "^2.0.30",
     "quasar": "^2.6.0",
     "tailwindcss-animistacss": "^1.0.7",
     "vue": "^3.0.0",

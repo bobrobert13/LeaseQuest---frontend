@@ -23,7 +23,7 @@ export default {
 </script>
 <style>
 .map {
-  height: 300px;
+  height: 100vh;
 
 }
 </style>
