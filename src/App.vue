@@ -11,7 +11,7 @@ export default defineComponent({
   name: 'App',
   setup(props) {
     onMounted(() => {
-      console.log("APOLLO STATE....", apolloClient)
+      // console.log("APOLLO STATE....", apolloClient)
       console.log("PINIA STATE....", user.userState )
 
     });
