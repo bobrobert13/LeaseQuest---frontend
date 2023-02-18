@@ -10,8 +10,7 @@
   />
   </div>
   <div v-if=" loaderHome !== true">
-  <div  class=" bg-primary pb-2" style="  margin-top: -16px; border-bottom-left-radius: 20%; border-bottom-right-radius: 20%;">
-    <div id="oferta" class=" w-10 h-10 shadow-sm bg-white rounded-full absolute z-10 animate-pulse " style="top: 10%; right: 15px;"></div>
+  <div  class=" bg-white " style=" box-shadow: 0px -9px 30px 0px #b7b3b0;  margin-top: -25px; border-bottom-left-radius: 17%; border-bottom-right-radius: 17%;">
     <q-card-section class="row items-center justify-around q-mt-md col-12">
 
       <Buscador />

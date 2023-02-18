@@ -32,6 +32,6 @@ export default {
 .q-field__label {
   margin-top: -6px;
   margin-left: 4px;
-  color: #80CBB5;
+  color: #b6bbb9;
 }
 </style>

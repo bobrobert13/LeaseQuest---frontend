@@ -1,8 +1,4 @@
-import { apolloClient } from '../config/apollo'
-import { createApp } from 'vue'
-import { createPinia } from 'pinia';
-const app = createApp({})
-const pinia = createApp();
-
+import { apolloClient } from "../config/apollo";
+import { createApp } from "vue";
+const app = createApp({});
 app.config.globalProperties.$apollo = apolloClient;
-app.config.globalProperties.$pinia = pinia;
