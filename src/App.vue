@@ -5,13 +5,14 @@
 <script>
 import { defineComponent, onMounted } from 'vue'
 import { useQuasar } from 'quasar'
-import { apolloClient } from './config/apollo';
+import  {getAllApartament}  from './composables/useApartaments';
 import { useGlobalUser,  } from './store/pinia.ts';
 export default defineComponent({
   name: 'App',
   setup(props) {
+    const { getApart } = getAllApartament();
     onMounted(() => {
-      // console.log("APOLLO STATE....", apolloClient)
+      getApart();
       console.log("PINIA STATE....", user.userState )
 
     });

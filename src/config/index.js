@@ -1,4 +1,4 @@
 export const config = {
-  urlDev: "",
+  urlDev: "http://localhost:3000/graphql",
   urlProd: "",
-}
+};
