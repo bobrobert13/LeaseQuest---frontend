@@ -10,20 +10,46 @@
   />
   </div>
   <div v-if=" loaderHome !== true">
-  <div  class=" bg-white " style=" box-shadow: 0px -9px 30px 0px #b7b3b0;  margin-top: -25px; border-bottom-left-radius: 17%; border-bottom-right-radius: 17%;">
-    <q-card-section class="row items-center justify-around q-mt-md col-12">
-
-      <Buscador />
+    <q-card-section class="row items-center col-12">
       <Perfil_circulo />
     </q-card-section>
-  </div>
+
+  <div class=" columns-1 col-12">
+  <div class=" row col-12 font-semibold my-5">
+       <p  class=" text-xl  col-8 pl-6 mb-6 "> Encuentra y consigue tu plan indicado.!</p>
+      </div>
+      <div class=" row w-full justify-around ">
+        <q-select class="  w-40 rounded-3xl bg-slate-50 " label="Desde" filled />
+        <q-select class=" w-40 rounded-3xl  bg-slate-50 " label="Hasta" filled />
+        <div class=" row relative col-12 px-3 mt-2 no-wrap">
+          <input class="  mt-2 text-gray-600 col-12 p-4 border-none
+          outline-none bg-slate-50 focus:outline-none rounded-3xl
+        " placeholder="Busca en los mejores Ressorts" type="text" />
+        <div class=" self-center items-center
+         absolute right-3  p-4 bottom-3 cursor-pointer rounded-3xl bg-green-300 "></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div  class=" columns-1 mt-2 w-full p-6 ">
+    <p class=" text-sm font-light">Ressorts</p>
+    <div class=" row w-full justify-between no-wrap" >
+        <div v-for="(index) in 4" class=" row  cursor-pointer border-double no-scroll rounded-full w-20 h-20 ">
+          <q-img class=" object-cover w-20 shadow-xl h-20 no-scroll" src="../assets/1.jpg" alt="historia"></q-img>
+        </div>
+      </div>
+    </div>
+
     <div class="q-pa-lg" :style="styleDiv" @click="outDiv">
+
+
 
       <span class=" text-xl sm:text-md text-weight-bolder md:textarea-md lg:text-lg text-primary">Mejor Valorados</span>
       <Valorados />
     </div>
 
-    <div class=" mt-3 ">
+    <div class=" mt-2 ">
       <div class="row q-mb-md justify-around self-center content-center ">
         <span class="text-h6 text-weight-bolder text-primary">Disponibles</span>
         <span class="text-accent pt-1">Mostrando 6 de 56</span>

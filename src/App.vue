@@ -5,14 +5,11 @@
 <script>
 import { defineComponent, onMounted } from 'vue'
 import { useQuasar } from 'quasar'
-import  {getAllApartament}  from './composables/useApartaments';
 import { useGlobalUser,  } from './store/pinia.ts';
 export default defineComponent({
   name: 'App',
   setup(props) {
-    const { getApart } = getAllApartament();
     onMounted(() => {
-      getApart();
       console.log("PINIA STATE....", user.userState )
 
     });

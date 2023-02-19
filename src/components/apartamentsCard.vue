@@ -1,7 +1,7 @@
 <template>
 <div class=" ">
     <q-scroll-area class=" col-12" style="width: 100vw; height: 100vh;">
-        <div v-for="n in 5">
+        <div v-for="n in 2">
             <q-card class=" relative-position z-10 shadow-none col-sm-12 col-xs-12 row py-4 px-4 items-start self-center">
                 <div class=" absolute-right -z-10 ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="285.58" height="144.533" viewBox="0 0 285.58 144.533">

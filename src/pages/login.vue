@@ -1,86 +1,65 @@
 <template>
-  <div style=" " class="bg-img h-screen w-screen object-cover bg-cover ">
+  <div style=" " class="bg-img h-screen w-screen object-cover bg-white ">
     <div class="p-8 lg:w-1/2 mx-auto">
-
-      <div class=" mt-24 relative-position top-0 h-2 shadow-2xl w-screen  ">
-
+      <div class=" mt-28 relative-position top-0 h-2 shadow-2xl w-screen  ">
       </div>
-
-      <div class=" w-screen flex justify-center items-center container  mb-6">
-        <div class=" flex justify-center m-auto w-28 h-28 rounded-full bg-gray-300 ">
-          <img src="" alt="logo">
+      <div class=" w-screen column justify-center items-center container  mb-0">
+        <div class=" flex justify-center m-auto w-28 h-28 rounded-full  ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62">
+  <path id="icon" d="M9.08,52.92A31,31,0,1,1,52.92,9.08,31,31,0,1,1,9.08,52.92ZM5.636,31A25.364,25.364,0,1,0,31,5.636,25.393,25.393,0,0,0,5.636,31Zm11.525,9.72,4.611-3.244a11.273,11.273,0,0,0,18.457,0l4.609,3.244a16.912,16.912,0,0,1-27.677,0ZM36.636,28.182V22.546h5.638v5.636Zm-16.908,0V22.546h5.636v5.636Z" fill="#09b482"/>
+</svg>
         </div>
+        <!-- <p class=" text-weight-light">R&B</p> -->
       </div>
+      <input class=" border-none text-gray-600 text-xs h-12 outline-none px-5 mt-8 py-2 bg-[#aa9f9f17] shadow-md w-full rounded-3xl"
+      placeholder="Dirección de correo" v-model="user.email" type="email" label="Label" />
 
-      <div class=" rounded-b-lg py-12 px-4 lg:px-24">
-        <div class="mt-6">
-          <div class="relative"> <input
-              class="appearance-none border pl-12 border-white shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
-              id="username" type="text" placeholder="Email" />
-            <div class="absolute left-0 inset-y-0 flex items-center"> <svg xmlns="http://www.w3.org/2000/svg"
-                class="h-7 w-7 ml-3 text-gray-400 p-1" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-              </svg> </div>
-          </div>
-          <div class="relative mt-3"> <input
-              class="appearance-none border pl-12 border-white shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
-              id="username" type="text" placeholder="Password" />
-            <div class="absolute left-0 inset-y-0 flex items-center"> <svg xmlns="http://www.w3.org/2000/svg"
-                class="h-7 w-7 ml-3 text-gray-400 p-1" viewBox="0 0 20 20" fill="currentColor">
-                <path
-                  d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" />
-              </svg> </div>
-          </div>
-          <div class="flex items-center justify-center mt-8"> <button @click="login"
-              class="text-white py-2 bg-primary px-4 uppercase rounded hover:bg-indigo-600 shadow hover:shadow-lg border-none font-medium transition transform hover:-translate-y-0.5">
-              Entrar </button> </div>
-        </div>
-      </div>
-
-      <div class=" rounded-t-lg p-8">
-        <p class="text-center text-sm text-gray-400 font-light animate__tracking-in-expand">Sign in with</p>
-        <div>
-          <div class="flex no-wrap items-center justify-center space-x-4 mt-3"> <button
-              class="flex items-center py-2 px-4 text-sm uppercase rounded bg-white hover:bg-gray-100 text-indigo-500 border border-transparent hover:border-transparent hover:text-gray-700 shadow-md hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3" viewBox="0 0 48 48">
-                <path fill="#fbc02d"
-                  d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" />
-                <path fill="#e53935"
-                  d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z" />
-                <path fill="#4caf50"
-                  d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z" />
-                <path fill="#1565c0"
-                  d="M43.611 20.083 43.595 20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z" />
-              </svg>
-              Google
-            </button> </div>
-        </div>
-      </div>
-
+      <input class=" mb-2 border-none text-gray-600 text-xs h-12 outline-none px-5 mt-8 py-2 bg-[#aa9f9f17] shadow-md w-full rounded-3xl"
+      placeholder="Contaseña de acceso" v-model="user.pass" type="password" label="Label" />
+      <small class=" w-full text-right font-thin mt-12 p-4">¿No tienes cuenta?
+      <b class=" text-weight-light color-[#09B482] cursor-pointer"> Registrate.</b></small>
+      <q-btn
+      id="btnLogin"
+      class="  mt-20 w-full bg-[#09B482] text-gray-300 text-lg border-none outline-none rounded-3xl"
+  label="Entrar" @click="executeLogin" />
 
     </div>
   </div>
 </template>
 <script>
+import { async } from 'postcss-js';
+import {ref} from 'vue';
 import { useRouter } from 'vue-router';
+import { registro_usuario } from '../composables/useUser';
 export default {
+
   components: {},
   setup() {
+    const { login } = registro_usuario();
     const router = useRouter();
-    const login = () => {
-      console.log("ENTRANDO");
-      router.push({ path: 'home' })
-    };
+    const user = ref({
+      email: "",
+      pass: ""
+    });
+    const executeLogin = async () => {
+      const userSession = await login(user.value);
+      console.log("SESSION DATA-...", userSession);
+    }
+
     return {
       router,
-      login
+      user,
+      executeLogin
     }
   }
 }
 </script>
 <style>
-.bg-img {
-  background-image: url(../assets/hotel.jpg);
+#btnLogin{
+  box-shadow: 0px 7px 24px -9px #09b482b0;
 }
+span{
+  font-size: 12px;
+}
+
 </style>
