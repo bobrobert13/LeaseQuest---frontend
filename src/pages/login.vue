@@ -28,25 +28,35 @@
 </template>
 <script>
 import { async } from 'postcss-js';
-import {ref} from 'vue';
+import {ref, onMounted} from 'vue';
 import { useRouter } from 'vue-router';
 import { registro_usuario } from '../composables/useUser';
+import { redirect } from '../composables/redirect';
+import { useGlobalUser } from '../store/pinia.ts';
 export default {
 
   components: {},
   setup() {
+    onMounted(() => {
+      store.destroySession();
+    });
     const { login } = registro_usuario();
+    const {  rout } = redirect();
     const router = useRouter();
+    const store = useGlobalUser();
     const user = ref({
       email: "",
       pass: ""
     });
     const executeLogin = async () => {
       const userSession = await login(user.value);
-      console.log("SESSION DATA-...", userSession);
+      store.saveSession(userSession)
+      //console.log("MI SESSSION... ", store.userState[0]);
+      rout(store.userState[0].user.role);
     }
 
     return {
+      store,
       router,
       user,
       executeLogin

@@ -1,10 +1,11 @@
-import { ref } from "vue";
+import { ref, toRefs } from "vue";
 import { REGISTRO_USUARIO, LOGIN } from "../graphql/user";
 import { apolloClient } from "../config/apollo";
 
+let dataLogin;
 export function registro_usuario(data) {
-  let sessionData = ref({});
-  const registro = (data) => {
+  let sessionData = ref({ token: null, user: null });
+  const registro = async (data) => {
     console.log("REGISTRO...", data.email);
     apolloClient
       .mutate({
@@ -36,18 +37,19 @@ export function registro_usuario(data) {
           },
         },
       })
-      .then(({ data }) => {
-        console.log("LOGIN...", data);
-        sessionData.value = data;
+      .then(async ({ data }) => {
+        dataLogin = data.login.token;
       })
       .catch((e) => {
         console.log("ERROR-LOGIN...", e);
       });
-    return sessionData;
+    return dataLogin;
   };
 
   return {
+    sessionData: toRefs(sessionData),
     registro,
     login,
+    dataLogin,
   };
 }
