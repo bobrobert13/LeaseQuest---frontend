@@ -3,16 +3,17 @@ import { createHttpLink } from "apollo-link-http";
 import { ApolloLink } from "apollo-link";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { config } from "./index";
-
+import { useGlobalUser } from "../store/pinia.ts";
+const store = useGlobalUser();
 //YA ENVIO HEADERS, CONEXION CORRECTA Y CONFIGURACION BASICA. lISTO PARA BASE.
 
 // HTTP conexion simple a la API
-
 const httpLink = createHttpLink({
   // aca la url de conexion
   uri: config.urlDev,
 });
-let token = "TESTTOKEEEN";
+
+let token = store.userState.token;
 const middleWareLink = new ApolloLink((operation, forward) => {
   operation.setContext((context) => ({
     ...context,

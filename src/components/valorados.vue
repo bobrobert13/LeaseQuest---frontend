@@ -21,13 +21,14 @@
 
 
 </template>
-<script scope>
 
+<script scope>
+import { ref } from 'vue';
 export default {
   name: "valorados",
-  props: {},
   components: {},
-  setup() {
+  setup(props) {
+
     return {
 
     }

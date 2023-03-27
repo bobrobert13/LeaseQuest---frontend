@@ -7,7 +7,7 @@
       </q-avatar>
 
     </router-link>
-    <p class=" self-center p-2 mt-1 col-7 font-light">Hola Billie.!</p>
+    <p class=" self-center p-2 mt-1 col-7 font-light">{{ nombre }}</p>
     <div class=" self-center relative bottom-2 "><small> <q-icon name="map" size="20px" /> Venezuela</small></div>
   </div>
 
@@ -15,14 +15,15 @@
 
 
 <script scope>
-
+import { ref } from 'vue';
 export default {
   name: "perfil_circulo",
-  props: {},
+  props: ["nombre", ],
   components: {},
-  setup() {
+  setup(props) {
+    const nombre = ref(props.nombre);
     return {
-
+      nombre
     }
   }
 }

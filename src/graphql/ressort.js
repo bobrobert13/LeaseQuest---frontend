@@ -1,7 +1,7 @@
 import { gql } from "graphql-tag";
 
-export const apartamentSchema = `
-allApartaments{
+const apartamentSchema = `
+apartaments{
   _id
   name
     photo
@@ -49,8 +49,16 @@ allApartaments{
 
 `;
 
-export const GET_ALL_APARTAMENTS = gql`
-query getAllApartaments {
-  ${apartamentSchema}
-}
+export const GET_RESSORTS = gql`
+  query getRessorts {
+    getAllRessorts {
+      nombre
+      _id
+      status
+      rif
+      tlt
+      puntuacion
+      ${apartamentSchema}
+    }
+  }
 `;

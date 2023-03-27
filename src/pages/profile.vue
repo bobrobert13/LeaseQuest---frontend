@@ -10,7 +10,7 @@
       </q-avatar>
       <p class=" q-pa-sm text-weight-light font-light text-center">Billie Eilish</p>
     </div>
-
+    {{ datePerfil }}
     <section id="menu" class=" col-12 q-pa-lg bg-primary" rounded>
       <q-card-section>
         <p class=" text-h6 text-white text-weight-bold">Cuenta</p>
@@ -62,7 +62,7 @@
       <!-- FIN DE LISTADO DE OPCIONES CUENTA -->
       <br><br>
       <q-card-section class=" q-pa-sm ">
-        <p class=" text-h6 text-white text-weight-bold text-primary">Notificaciones</p>
+        <p class=" text-h6 text-white text-weight-bold">Notificaciones</p>
         <br>
         <div>
           <q-item clickable>
@@ -92,13 +92,34 @@
   </div>
 </template>
 <script>
+import { getAllApartament} from '../composables/useApartaments'
+import { ref, reactive , onMounted, watch, onUpdated } from 'vue';
 export default {
   name: "profile",
   components: {},
   setup() {
+    const { datas } = getAllApartament();
+    let datePerfil = ref();
+    onMounted(() => {
+      console.log("promesaa desde perfilll... ", datas);
+  });
 
+  onUpdated(() => {
+    console.log("veoooooooooooo");
+    datePerfil.value = datas
+  });
+
+  watch(datas, (newValue, oldValue) => {
+    console.log("cambiando desde watcher PERFILLL viejp.... ", oldValue);
+    console.log("cambiando desde watcher PERFILLL nuevooo.... ", newValue);
+    if(newValue){
+      datePerfil.value = newValue;
+      console.log("DATA DE PUSH... ", datePerfil.value);
+    }
+  }, { immediate: true});
     return {
-
+      datas,
+      datePerfil
     }
   }
 }

@@ -1,5 +1,6 @@
 <template>
   <router-view />
+  
 </template>
 
 <script>
@@ -10,10 +11,10 @@ export default defineComponent({
   name: 'App',
   setup(props) {
     onMounted(() => {
-      console.log("PINIA STATE....", user.userState )
+     // console.log("PINIA STATE....", user.userState )
 
     });
-    const user = useGlobalUser();
+   // const user = useGlobalUser();
     const $q = useQuasar()
     console.log("ANDROID... ", $q.platform.is.android , 'IPHONE.... ', $q.platform.is.iphone);
     return {}

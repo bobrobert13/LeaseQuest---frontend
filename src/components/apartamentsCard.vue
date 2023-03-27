@@ -1,7 +1,7 @@
 <template>
 <div class=" ">
-    <q-scroll-area class=" col-12" style="width: 100vw; height: 100vh;">
-        <div v-for="n in 2">
+    <q-scroll-area class=" col-12" style="width: 100vw; height: 40vh;">
+        <div v-for="(apt, index) in apartamentos "  :key="apt._id">
             <q-card class=" relative-position z-10 shadow-none col-sm-12 col-xs-12 row py-4 px-4 items-start self-center">
                 <div class=" absolute-right -z-10 ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="285.58" height="144.533" viewBox="0 0 285.58 144.533">
@@ -10,8 +10,8 @@
 
                 </div>
                 <div class="col-6 relative no-wrap self-center border-none" style=" margin-bottom: 0px;">
-                    <div style="color: #80CBB5;" class=" mb-1 text-sm text-weight-bold">Suit Marroco Beach, Av
-                        Toronto
+                    <div style="color: #80CBB5;" class=" mb-1 text-sm text-weight-bold">
+                    {{ apt.name }}
                     </div>
                     <div class=" columns-1 col-12 w-full text-accent">
                         <p class="text-xs font-thin w-36 p-0 m-0 mb-1    ">Suit Marroco Beach, Av
@@ -48,11 +48,26 @@
 </template>
 
 <script>
+import { getAllApartament } from '../composables/useApartaments';
+import { ref, onMounted } from 'vue';
+import { keys } from 'tailwindcss-animistacss/animista__defaults';
 export default {
     name: "apartamentsCard",
     setup(props) {
-        return {
+      const apartamentos = ref([]);
+      const { getApart, datas  } = getAllApartament();
+      onMounted(() => {
+        console.log("DATASSSS.... ", datas);
 
+      getApart().then((res)=> {
+        apartamentos.value = res;
+        console.log("APTTSSSS... ", res);
+      }).catch((e) => {
+        console.log(e)
+      })
+    });
+        return {
+          apartamentos,
         }
     }
 }

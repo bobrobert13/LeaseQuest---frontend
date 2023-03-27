@@ -9,6 +9,10 @@ const routes = [
     children: [{ path: "", component: () => import("pages/login.vue") }],
   },
   {
+    path: "/carrusel",
+    children: [{ path: "", component: () => import("pages/carrusel.vue") }],
+  },
+  {
     path: "/registro",
     children: [{ path: "", component: () => import("pages/registro.vue") }],
   },

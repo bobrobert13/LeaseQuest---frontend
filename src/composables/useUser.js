@@ -1,10 +1,14 @@
-import { ref, toRefs } from "vue";
+import { ref, reactive, toRefs } from "vue";
 import { REGISTRO_USUARIO, LOGIN } from "../graphql/user";
 import { apolloClient } from "../config/apollo";
+import { redirect } from "./redirect";
+import { useGlobalUser } from "../store/pinia.ts";
 
 let dataLogin;
+let sessionData = reactive({ token: "", user: {} });
 export function registro_usuario(data) {
-  let sessionData = ref({ token: null, user: null });
+  const { rout } = redirect();
+  const store = useGlobalUser();
   const registro = async (data) => {
     console.log("REGISTRO...", data.email);
     apolloClient
@@ -26,7 +30,7 @@ export function registro_usuario(data) {
       });
   };
 
-  const login = (data) => {
+  const login = async (data) => {
     apolloClient
       .query({
         query: LOGIN,
@@ -38,18 +42,22 @@ export function registro_usuario(data) {
         },
       })
       .then(async ({ data }) => {
-        dataLogin = data.login.token;
+        sessionData.token = await data.login.token.code;
+        sessionData.user = await data.login.token.user;
+        //console.log("LA SESSION.... ", sessionData.token);
+        store.saveSession(sessionData.token, sessionData.user);
+        rout(store.userState.user.role);
       })
       .catch((e) => {
         console.log("ERROR-LOGIN...", e);
       });
-    return dataLogin;
+    return sessionData.token;
   };
 
   return {
-    sessionData: toRefs(sessionData),
-    registro,
     login,
+    sessionData,
+    registro,
     dataLogin,
   };
 }

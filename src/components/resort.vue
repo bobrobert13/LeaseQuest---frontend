@@ -1,7 +1,6 @@
 
 <template>
   <div class=" col-12 col-sm-12 col-xs-12  mt-10">
-
     <div class="row mr-3 relative justify-center col-12 self-center items-center ">
       <q-avatar class="" size="100px" font-size="105px">
         <img src="../assets/3.jpg">
@@ -13,19 +12,19 @@
         <span class="col-12  q-pa-xs float-right text-weight-bold text-primary"> Recomendado</span>
       </div>
     </div>
-
   </div>
 </template>
 
 
 <script scope>
-
+import { ref , onMounted } from 'vue';
 export default {
   name: "resort",
   props: {},
   components: {
   },
   setup() {
+
     return {
 
     }

@@ -5,7 +5,10 @@ export const useGlobalUser = defineStore('store', {
 
   state: () => {
     return {
-      userState: []
+      userState: {
+        token: "",
+        user: {}
+      }
      }
   },
 
@@ -17,12 +20,16 @@ export const useGlobalUser = defineStore('store', {
   // could also be defined as
   // state: () => ({ count: 0 })
   actions: {
-    saveSession(data){
-      console.log("STORE SESSION..." , data);
-        this.userState.push(data) ;
+    saveSession(token, user){
+     // console.log("STORE SESSION..." , token , user.fullName );
+        this.userState.token = token;
+        this.userState.user = user;
     },
     destroySession(){
-      this.userState = [];
+      this.userState = {
+        token: "",
+        user: {}
+      };
       console.log("SESSION DESTRUIDA");
     }
   },
