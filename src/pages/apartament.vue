@@ -4,7 +4,7 @@
 
     <div class=" bg-white py-5 ml-3 rounded-xl shadow-md  px-5 col-10 column  " style=" position: absolute; top: 35vh">
       <span class="text-h6 col-12 text-weight-bolder text-primary">Suit Marroco Beach, Av Toronto</span>
-      <small class=" text-subtitle2 text-weight-light text-primary">Disponible</small>
+      <small class=" text-subtitle2 text-weight-light text-primary">Disponible <i class=" fas fa-tv "></i> <!-- uses solid style --> </small>
       <div class=" items-center col-12 row">
 
 

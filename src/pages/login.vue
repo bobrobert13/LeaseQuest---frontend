@@ -1,56 +1,72 @@
 <template>
-<div class=" w-full h-full">
+<div class=" w-full z-10 h-full">
+<Circle :style="{
+  left: '260px',
+  top: '60px',
+  right:' 0px',
+  bottom: '0px',
+  bg_color: '#E4F3F3',
+  opacity: '0.60'
+}" />
 
-  <header class=" row col-12 justify-between p-6">
-    <div class=" "> loguito</div>
-    <div> <p class=" font-light ">texto</p> </div>
+
+  <header class=" row col-12  justify-between p-3">
+    <div class=" "> 
+      <q-img
+        src="../assets/logos/logo-no-background.png"
+        spinner-color="primary"
+        spinner-size="82px"
+      class=" w-20 h-12"
+      />
+    </div>
+    <div class=" h-16 flex flex-col items-end justify-end mr-5 " > <p class=" text-sm font-light  ">Lorem Ipsum</p> </div>
   </header>
 
-  <section>
+  <section class="z-50">
     <div class=" columns-1 p-6">
       <span class=" text-4xl font-medium text-[#090755] ">Hola, Bienvenido!</span>
-      <p class=" text-[#9E9FAC] mt-1">Comienza hoy mismo a hacer tus reservas.</p>
+      <p class=" text-[#1F4D3F] text-xs opacity-60 mt-1">Encuentra lo que buscas rápido y fácil.</p>
     </div>
   </section>
 
-  <section class=" p-6">
+  <section class=" p-6 pt-0 mt-7">
     <div class=" columns-1">
-    <label class=" font-light text-[#787989]" for="">Indique su correo electronico</label>
-      <q-input class=" row-auto mt-2 text-gray-400" outlined v-model="user.email" label="ejm: rob132ca@gmail.com" stack-label :dense="dense">
-        <template v-slot:prepend>
-          <div class=" row-auto opacity-30">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20.003" height="20" viewBox="0 0 20.003 20">
-  <path id="icon" d="M10,20A10,10,0,1,1,10,0c3.206,0,5.7.877,7.423,2.606S20,6.813,20,10a5.706,5.706,0,0,1-1.116,3.83A3.643,3.643,0,0,1,16,15a2.4,2.4,0,0,1-2.535-1.395A5,5,0,1,1,13,6V5h2v5c0,2.439.187,3,1,3a1.68,1.68,0,0,0,1.489-.606A4.06,4.06,0,0,0,18,10c0-5.308-2.691-8-8-8a8,8,0,1,0,4.693,14.48l1.173,1.62A9.934,9.934,0,0,1,10,20ZM10,7a3,3,0,1,0,3,3A3,3,0,0,0,10,7Z" transform="translate(0.003 0)"/>
-</svg>
-          </div>
-        </template>
+
+      <q-input placeholder="Correo Electronico" class="  text-gray-100  "  outlined v-model="user.email"  dense>
       </q-input>
-
 <br>
-      <label class=" font-light text-[#787989]" for="">Indique su contraseña</label>
-      <q-input type="password" class=" row-auto mt-2" outlined v-model="user.pass" label="*******" stack-label :dense="dense">
-        <template v-slot:prepend>
-          <div class=" row-auto opacity-30">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
-  <path id="icon" d="M2,20a1.924,1.924,0,0,1-2-1.833V9.833A1.924,1.924,0,0,1,2,8H3V5A5,5,0,1,1,13,5V8h1a1.924,1.924,0,0,1,2,1.833v8.333A1.924,1.924,0,0,1,14,20Zm0-2H14V10H2ZM11,8V5A3,3,0,1,0,5,5V8ZM7,14a1,1,0,1,1,1,1A1,1,0,0,1,7,14Z"/>
-</svg>
-
-          </div>
-        </template>
+<Circle :style="{
+  left: '-80px',
+  top: '300px',
+  right:'0px',
+  bottom: '0px',
+  bg_color: '#000000',
+  opacity: '0.07'
+}" />
+      <q-input type="password" placeholder="Contraseña"  class="  mt-2" outlined v-model="user.pass"  dense >
       </q-input>
     </div>
-    <p class=" text-right m-2 text-[#787989]">¿No tienes cuenta?</p>
+    <p class=" text-right m-1 mt-1 text-xs cursor-pointer text-[#787989]">¿No tienes cuenta?</p>
   </section>
 
-  <div class=" w-full p-6">
-    <q-btn class=" bg-[#09B482] w-full p-3 text-white"  label="entrar" @click="login(user)" />
-    <!-- <p class=" text-center p-4 text-[#787989]">Ó, inicia session con Google</p>
-    <button class=" p-3 border shadow-none border-gray-300 bg-white" type="">Sign in with Google</button> -->
+  <div class=" w-44 mt-20 m-auto p-3">
+    <q-btn class=" bg-[#000000] rounded-3xl w-full p-1 text-white"  label="Lorem Ipsum" @click="login(user)" />
     <div class=" flex">
     </div>
-    <!-- <p class=" mt-3">¿Olvidaste tu contraseña?</p> -->
   </div>
 
+  <footer class="  fixed-bottom">
+        <p class=" ml-3 font-light text-xs opacity-75">Robert_Web 2023</p>
+  </footer>
+
+  <Circle :style="{
+  left: '220px',
+  top: '510px',
+  right:'0px',
+  bottom: '0px',
+  bg_color: '#E4F3EF',
+  opacity: '0.60'
+}" />
 
 </div>
 </template>
@@ -60,9 +76,10 @@ import { useRouter } from 'vue-router';
 import { registro_usuario } from '../composables/useUser';
 import { redirect } from '../composables/redirect';
 import { useGlobalUser } from '../store/pinia.ts';
+import Circle from 'src/components/decoration/circle.vue';
 export default {
 
-  components: {},
+  components: { Circle },
   setup() {
     onMounted(() => {
       isLogged(store.userState.token)
@@ -77,7 +94,7 @@ export default {
       pass: ""
     });
 
-    login(user.value);
+    // login(user.value);
     return {
       login,
       store,
@@ -88,8 +105,9 @@ export default {
 }
 </script>
 <style>
+
 #btnLogin{
-  box-shadow: 0px 7px 24px -9px #09b482b0;
+  /* box-shadow: 0px 7px 24px -9px #09b482b0; */
 }
 span{
   font-size: 12px;

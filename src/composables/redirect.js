@@ -5,13 +5,16 @@ export function redirect() {
   const route = useRoute;
   const isLogged = (tokenSession) => {
     tokenSession !== ""
-      ? Router.push({ path: "home" })
+      ? Router.push({ path: "/" })
       : Router.push({ path: "login" });
   };
   const rout = (role) => {
     switch (role) {
       case "user":
-        Router.push({ path: "home" });
+        Router.push({ path: "/" });
+        break;
+      case "admin":
+        Router.push({ path: "/" });
         break;
     }
   };

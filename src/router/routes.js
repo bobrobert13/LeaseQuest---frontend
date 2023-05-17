@@ -2,7 +2,10 @@ const routes = [
   {
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
-    children: [{ path: "", component: () => import("pages/IndexPage.vue") }],
+    children: [
+      { path: "", component: () => import("pages/home.vue") },
+
+    ],
   },
   {
     path: "/login",
@@ -16,10 +19,10 @@ const routes = [
     path: "/registro",
     children: [{ path: "", component: () => import("pages/registro.vue") }],
   },
-  {
-    path: "/home",
-    children: [{ path: "", component: () => import("pages/home.vue") }],
-  },
+  // {
+  //   path: "/home",
+  //   children: [{ path: "", component: () => import("pages/home.vue") }],
+  // },
   {
     path: "/apartament",
     children: [{ path: "", component: () => import("pages/apartament.vue") }],
