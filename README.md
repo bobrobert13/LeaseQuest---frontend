@@ -1,6 +1,6 @@
 # reservTAK (reservasapt)
 
-ReservasApt
+LeaseQuest
 
 ## Install the dependencies
 ```bash
